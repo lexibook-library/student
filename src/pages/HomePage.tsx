@@ -17,7 +17,7 @@ export default function HomePage() {
             <div className="mb-4 inline-flex w-fit items-center gap-2 rounded-full bg-white px-3 py-2 text-sm font-extrabold text-orange-700 shadow-sm">
               <Sparkles size={18} /> Kế hoạch đọc của trường
             </div>
-            <h1 className="text-3xl font-black text-gray-900 md:text-4xl">Chào buổi sáng, Minh Anh!</h1>
+            <h1 className="text-3xl font-black text-gray-900 md:text-4xl">Chào Minh Anh!</h1>
             <p className="mt-3 max-w-2xl text-base font-medium text-gray-600">Sau khi đọc sách trên hệ thống của trường, hãy vào đây để hoàn thành bộ câu hỏi và nhận điểm Lexile.</p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Link to="/tests" className="inline-flex min-h-12 items-center rounded-2xl bg-orange-500 px-5 font-extrabold text-white shadow-lg shadow-orange-200 hover:bg-orange-600">Làm bộ câu hỏi</Link>

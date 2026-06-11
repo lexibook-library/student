@@ -1,4 +1,4 @@
-# iRead Student
+# Lexibook Library
 
 Website demo cho học sinh làm bộ câu hỏi Lexile theo kế hoạch admin hoặc giáo viên giao sau khi đã đọc sách trên hệ thống đọc sách của trường.
 
@@ -32,7 +32,7 @@ npm run build
 - `/tests` Danh sách bài kiểm tra
 - `/tests/:testId/start` Màn hình làm bài
 - `/tests/:testId/result` Kết quả sau khi nộp bài
-- `/library` Kế hoạch đọc được giao
+- `/library` Tủ sách
 - `/library/:bookId` Chi tiết sách và bộ câu hỏi
 - `/achievements` Thành tích
 - `/leaderboard` Bảng xếp hạng

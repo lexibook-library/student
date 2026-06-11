@@ -56,6 +56,7 @@ export function StatusBadge({ status }: { status: string }) {
     "Đang làm": "bg-blue-50 text-blue-700",
     "Chưa bắt đầu": "bg-gray-100 text-gray-700",
     "Chưa thực hiện": "bg-gray-100 text-gray-700",
+    "Đã thực hiện": "bg-green-50 text-green-700",
     "Sắp hết hạn": "bg-amber-50 text-amber-700",
     "Quá hạn": "bg-red-50 text-red-700",
     "Đã quá hạn": "bg-red-50 text-red-700",
@@ -103,24 +104,26 @@ export function BookCover({ book, className }: { book: Pick<Book, "title" | "cov
 
 export function BookCard({ book, compact = false }: { book: Book; compact?: boolean }) {
   return (
-    <article className="card-hover rounded-[20px] border border-gray-100 bg-white p-3 shadow-sm">
-      <Link to={`/library/${book.id}`} className={cn("grid gap-3", compact ? "grid-cols-[84px_1fr]" : "")}>
-        <BookCover book={book} className={compact ? "rounded-2xl" : ""} />
-        <div className="space-y-2 p-1">
-          <div className="flex items-start justify-between gap-2">
+    <article className="card-hover h-full rounded-[20px] border border-gray-100 bg-white p-3 shadow-sm">
+      <Link to={`/library/${book.id}`} className={cn("flex h-full flex-col gap-3", compact && "grid grid-cols-[84px_1fr]")}>
+        <BookCover book={book} className={compact ? "rounded-2xl" : "h-[300px]"} />
+        <div className="flex flex-1 flex-col p-1 pt-0">
+          <div className="flex min-h-[58px] items-start justify-between gap-2">
             <div>
               <h3 className="line-clamp-2 font-extrabold text-gray-800">{book.title}</h3>
               <p className="text-sm text-gray-500">{book.author}</p>
             </div>
             <StatusBadge status={book.status} />
           </div>
-          <div className="flex flex-wrap items-center gap-2 text-xs font-bold text-gray-500">
+          <div className="mt-2 flex min-h-[28px] flex-wrap items-center gap-2 text-xs font-bold text-gray-500">
             <span className="rounded-full bg-orange-50 px-2 py-1 text-orange-700">{book.lexile}L</span>
             <span>{book.genre}</span>
             <span className="inline-flex items-center gap-1"><Star size={14} className="fill-amber-400 text-amber-400" />{book.rating}</span>
           </div>
-          {book.progress > 0 && <ProgressBar value={book.progress} />}
-          <button className="mt-1 min-h-10 w-full rounded-2xl bg-orange-500 px-4 text-sm font-extrabold text-white hover:bg-orange-600">Xem bộ câu hỏi</button>
+          <div className="mt-4 mb-4 flex h-3 items-center">
+            {book.progress > 0 ? <ProgressBar value={book.progress} /> : <div className="h-2.5 w-full rounded-full bg-gray-100" />}
+          </div>
+          <button className="mt-auto min-h-11 w-full rounded-2xl bg-orange-500 px-4 text-sm font-extrabold text-white hover:bg-orange-600">Làm bài đánh giá</button>
         </div>
       </Link>
     </article>

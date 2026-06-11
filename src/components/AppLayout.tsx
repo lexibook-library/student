@@ -30,7 +30,7 @@ const navItems = [
   { label: "Trang chủ", to: "/home", icon: Home },
   { label: "Nhiệm vụ của tôi", to: "/tasks", icon: ClipboardCheck },
   { label: "Làm bài kiểm tra", to: "/tests", icon: BookOpen },
-  { label: "Kế hoạch đọc", to: "/library", icon: Library },
+  { label: "Tủ sách", to: "/library", icon: Library },
   { label: "Thành tích", to: "/achievements", icon: Award },
   { label: "Bảng xếp hạng", to: "/leaderboard", icon: Trophy },
   { label: "Hồ sơ cá nhân", to: "/profile", icon: User },
@@ -40,10 +40,10 @@ function StudentSidebar({ collapsed, onToggle }: { collapsed: boolean; onToggle:
   return (
     <aside className={cn("fixed inset-y-0 left-0 z-30 hidden border-r border-orange-100 bg-white/95 p-4 shadow-sm backdrop-blur lg:block", collapsed ? "w-[88px]" : "w-[268px]")}>
       <div className="mb-6 flex min-h-12 items-center justify-between gap-2">
-        <div className={cn("flex items-center gap-3", collapsed && "justify-center")}>
+        <NavLink to="/home" className={cn("flex items-center gap-3 rounded-2xl transition hover:opacity-85", collapsed && "justify-center")} title="Về trang chủ">
           <div className="grid h-11 w-11 place-items-center rounded-2xl bg-gradient-to-br from-orange-500 to-amber-400 text-white shadow-lg"><BookOpen /></div>
-          {!collapsed && <div><p className="text-lg font-black text-gray-900">iRead</p><p className="text-xs font-bold text-orange-600">Học sinh</p></div>}
-        </div>
+          {!collapsed && <div><p className="text-lg font-black text-gray-900">Lexibook Library</p><p className="text-xs font-bold text-orange-600">Học sinh</p></div>}
+        </NavLink>
         {!collapsed && <button className="grid h-10 w-10 place-items-center rounded-full bg-orange-50 text-orange-700" onClick={onToggle} aria-label="Thu gọn"><PanelLeftClose size={18} /></button>}
       </div>
       {collapsed && <button className="mb-4 grid h-10 w-10 place-items-center rounded-full bg-orange-50 text-orange-700" onClick={onToggle} aria-label="Mở rộng"><Menu size={18} /></button>}

@@ -35,7 +35,7 @@ export default function TestResultPage() {
         </div>
         <div className="flex flex-wrap gap-3">
           <Link to="/tests" className="rounded-2xl bg-white px-5 py-3 font-extrabold text-orange-700 shadow-sm">Quay lại danh sách bài</Link>
-          <Link to={`/library/${book.id}`} className="rounded-2xl bg-orange-50 px-5 py-3 font-extrabold text-orange-700">Xem kế hoạch sách</Link>
+          <Link to={`/library/${book.id}`} className="rounded-2xl bg-orange-50 px-5 py-3 font-extrabold text-orange-700">Xem sách trong tủ sách</Link>
           <Link to={`/tests/${test.id}/start`} className="rounded-2xl bg-orange-500 px-5 py-3 font-extrabold text-white">Làm lại bài</Link>
         </div>
       </main>

@@ -29,10 +29,6 @@ export default function LibraryDetailPage() {
             <Info label="Đánh giá" value={`${book.rating} ★`} />
           </div>
           {book.progress > 0 && <div className="mt-4 flex items-center gap-3"><ProgressBar value={book.progress} /><b>{book.progress}%</b></div>}
-          <div className="mt-5 flex flex-wrap gap-3">
-            <button onClick={() => showToast("Đã lưu sách vào kế hoạch cá nhân")} className="min-h-11 rounded-2xl bg-orange-50 px-5 font-extrabold text-orange-700">Lưu vào kế hoạch của tôi</button>
-            <Link to="/tests/test-de-men/start" className="inline-flex min-h-11 items-center rounded-2xl bg-orange-500 px-5 font-extrabold text-white">Làm bộ câu hỏi</Link>
-          </div>
         </div>
       </section>
       <div className="flex gap-2 overflow-x-auto rounded-[20px] bg-white p-2 shadow-sm">{tabs.map((item) => <button key={item} onClick={() => setTab(item)} className={`min-h-11 rounded-2xl px-4 text-sm font-black ${tab === item ? "bg-orange-500 text-white" : "text-gray-500 hover:bg-orange-50"}`}>{item}</button>)}</div>
